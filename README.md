@@ -1,4 +1,4 @@
-# ionic-slide-tab-page
+# ionic-slide-tab
  ionic3 左右滑动切换tab页
 
 ## 效果图
