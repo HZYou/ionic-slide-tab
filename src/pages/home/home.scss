@@ -1,0 +1,61 @@
+page-home {
+  // tab css
+  .tab-box {
+    height: 3.7rem;
+    justify-content: flex-start;
+    overflow: auto;
+    background-color: #fff;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      display: none;
+    }
+  }
+
+  .segment-ios .segment-button.segment-activated {
+    color: #000;
+    background-color: #fff;
+    font-size: 2.4rem;
+    font-weight: bold;
+    transition: 200ms all linear;
+  }
+
+  .segment-ios .segment-button:hover:not(.segment-activated) {
+    background-color: #fff;
+    transition: none;
+  }
+
+  .segment-ios .segment-button {
+    color: #212121;
+    // color: #666;
+    background-color: #fff;
+    border: none;
+    font-size: 1.4rem;
+    // font-weight: bold;
+    // max-width: 7rem;
+    // flex: 0 0 62px;
+    flex: 0 0 auto;
+    min-width: 4rem;
+    padding: 0 11px;
+    width: auto;
+    height: 3.3rem;
+  }
+
+  .bolder-ios {
+    border: 2px solid #459eff;
+    // width: 50px;
+    margin: 0 auto;
+  }
+  // tab css end
+
+  .inner-scroll {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: scroll;
+  }
+}

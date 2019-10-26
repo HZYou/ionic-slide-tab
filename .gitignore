@@ -1,0 +1,12 @@
+node_modules
+www/
+.vscode/
+npm-debug.log*
+.idea/
+.ionic/
+.sourcemaps/
+.sass-cache/
+.tmp/
+.versions/
+dist/
+.DS_Store

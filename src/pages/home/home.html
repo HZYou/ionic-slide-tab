@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      左右滑动切换
+    </ion-title>
+  </ion-navbar>
+  <ion-grid no-padding>
+    <ion-segment class="tab-box" [(ngModel)]="tabs" color="block" (ionChange)="segmentChanged()">
+      <ion-segment-button [value]="0">
+        Tab1
+        <div [class.bolder-ios]="tabs==0"></div>
+      </ion-segment-button>
+      <ion-segment-button [value]="1">
+        Tab2
+        <div [class.bolder-ios]="tabs==1"></div>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-grid>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides #homeSlides style="display: flex;height:100%;" (ionSlideWillChange)="slideChanged($event)">
+
+    <ion-slide>
+      <div class="inner-scroll">
+        <ion-list>
+          <ion-item detail-none *ngFor="let item of tab1;let index = index;">
+            {{item}}
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="inner-scroll">
+        <ion-list>
+          <ion-item detail-push *ngFor="let item of tab2;">
+            {{item}}
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <ion-infinite-scroll disabled (ionInfinite)="loadMore($event)" *ngIf="hasNext[tabs]&&infinite">
+    <ion-infinite-scroll-content loadingText="数据加载中..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
